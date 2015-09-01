@@ -1,0 +1,481 @@
+/************************************/
+/*																*/
+/*					DESKTOPBODY.CSS					*/
+/*																*/
+/*					1.) GENERAL							*/
+/*					2.) USER PAGE							*/
+/*					3.) BAND PAGE						*/
+/*					4.) POLL WIDGET						*/
+/*					5.) ABOUT PAGE						*/
+/*																*/
+/************************************/
+
+/***********************/
+/*			1.) GENERAL			*/
+/***********************/
+
+body {
+	margin: 0 auto;
+	min-width: 900px;
+	background: #f1f1f1;
+	font-family: PT Sans;
+}
+
+h1, h2, h3, h4, h5, h6, b, strong, th {
+	font-family: PT Sans Bold;
+}
+
+i, em {
+	font-family: PT Sans Italic;
+}
+
+.boldItalic {
+	font-family: PT Sans Bold Italic;
+}
+
+.aWhite {
+	text-decoration: none;
+	color: #eee;
+}
+
+#shadow {
+	opacity: .5;
+	background: #555;
+	display: none;
+}
+
+.center {
+	text-align: center;
+}
+
+.marginCenter {
+	margin: 0 auto;
+}
+
+.strong {
+	font-weight: bold;
+	font-family: PT Sans Bold;
+}
+
+#loginSubmitButton, #registerSubmitButton {
+	width: 100%;
+	margin-top: 30px;
+	margin-bottom: 10px;
+}
+
+.RegError, .logError {
+	background: #bf0000;
+}
+
+.successDialog {
+	background: #008000;
+}
+
+.dialogBox {
+	width: 50%;
+	min-width: 400px;
+	max-width: 800px;
+	padding: 10px 2px;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	margin-top: 10px;
+	position: absolute;
+	text-align: center;
+	box-shadow: 1px 1px 3px #333;
+	color: #fff;
+	font-family: PT Sans Bold;
+}
+
+.dialogBox > span {
+	padding: 0px 10px;
+}
+
+.wrapper {
+	width: 95%;
+	min-width: 880px;
+	max-width: 1500px;
+	margin: 0 auto;
+	margin-top: 10px;
+}
+
+.backButton {
+	text-decoration: underline;
+	width: 20%;
+	color: #eee;
+	cursor: pointer;
+	display: block;
+	margin: 0 auto;
+}
+
+.desktopBackButton {
+	color: #000;
+	text-decoration: underline;
+	cursor: pointer;
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 5px;
+	font-weight: bold;
+	font-family: PT Sans Bold;
+}
+
+.desktopBackButton a:visited {
+	color: #000;
+}
+
+.inputBox {
+	height: 30px;
+	margin: 0 auto;
+	border: none;
+	border-radius: 5px;
+	background: #333;
+	color: #eee;
+	padding: 0px 10px;
+	margin-top: 10px;
+	box-shadow: 1px 1px 3px #555;
+}
+
+.selectBox {
+	height: 30px;
+	max-width: 200px;
+	margin: 0 auto;
+	border: none;
+	border-radius: 5px;
+	background: #333;
+	color: #eee;
+	padding: 0px 10px;
+	margin-top: 10px;
+	box-shadow: 1px 1px 3px #555;
+}
+
+.inputTextarea {
+	height: 125px;
+	width: 90%;
+	max-width: 600px;
+	margin: 0 auto;
+	border: none;
+	border-radius: 5px;
+	background: #333;
+	color: #eee;
+	padding: 3px 10px;
+	margin-top: 10px;
+	box-shadow: 1px 1px 3px #555;
+}
+
+.hiddenLink {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	color: inherit;
+}
+
+
+/***********************/
+/*			2.) USER PAGE	  		*/
+/***********************/
+
+.profileInfoWrapper {
+	width: 30%;
+	min-width: 260px;
+	max-width: 280px;
+	margin: 0 auto;
+	margin-right: 15px;
+	margin-bottom: 15px;
+	float: left;
+	background: #ffffff;
+	padding: 5px;
+	box-shadow: 1px 1px 3px #888;
+	display: block;
+}
+
+.editProfileInfoWrapper, .editProfileImageWrapper {
+	width: 60%;
+	min-width: 525px;
+	max-width: 800px;
+	background: #ffffff;
+	float: left;
+	padding: 5px;
+	box-shadow: 1px 1px 3px #888;
+	margin: 0px;
+	margin-right: 15px;
+	display: block;
+}
+
+.editProfileInfoWrapper form {
+	text-align: center;
+}
+
+#userCityBox {
+	width: 100px;
+}
+
+
+#profilePic {
+	display: block;
+	margin: 0 auto;
+	box-shadow: 0 0 3px #333;
+}
+
+#profilePicWrapper {
+	width: 100%;
+}
+
+#profileEditContainer {
+	width: 90%;
+	background: #ddd;
+	box-shadow: 1px 1px 3px #888;
+	padding: 10px;
+	display: inline-block;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.editButton, #submitPollButton {
+	border: none;
+	border-radius: 5px;
+	width: 200px;
+	height: 28px;
+	background: #555;
+	color: #eee;
+	cursor: pointer;
+	display: block;
+	margin: 0 auto;
+	margin-top: 10px;
+	text-align: center;
+	box-shadow: 1px 1px 3px #888;
+	font-weight: bold;
+	font-family: PT Sans Bold;
+	font-size: 16px;
+}
+
+.profileInfoContainer {
+	width: 90%;
+	margin: 0 auto;
+	padding: 5px;
+}
+
+.profileInfoLeft {
+	width: 48%;
+	clear: right;
+	float: left;
+}
+
+.profileInfoRight {
+	width: 48%;
+	float: right;
+}
+
+#editLocationWrapper, #editBioWrapper, #submitFormButton {
+	margin-top: 10px;
+}
+
+#editGenderWrapper {
+	width: 50%;
+	margin-top: 10px;
+	float: left;
+}
+
+#editBirthdayWrapper {
+	width: 50%;
+	margin-top: 10px;
+	float: right;
+}
+
+#userState {
+	width: 100px;
+	padding-left: 5px;
+}
+
+#editBirthdayWrapper span {
+	font-weight: bold;
+	font-family: PT Sans Bold;
+}
+
+#userBdayMonth, #userBdayDay {
+	width: 40px;
+	text-align: center;
+	padding: 0;
+}
+
+#userBdayYear {
+	width: 60px;
+	text-align: center;
+	padding: 0;
+}
+
+.profileWidgetBio {
+	clear: both;
+}
+
+#readMore, #readLess {
+	color: #333;
+	text-decoration: underline;
+	width: 100%;
+	font-weight: bold;
+	font-family: PT Sans Bold;
+	cursor: pointer;
+	font-size: 12px;
+	text-align: right;
+	margin: 0 auto;
+	padding: 0;
+	display: block;
+	margin-top: -10px;
+}
+
+.userImageDisplay {
+	background: #888;
+	width: 95%;
+	margin: 0 auto;
+	margin-top: 10px;
+	display: block;
+}
+
+
+/***********************/
+/*			3.) BAND PAGE	  	*/
+/***********************/
+
+.bandSliderWrapper {
+	width: 60%;
+	max-width: 750px;
+	margin: 5px;
+	padding: 0;
+	float: left;
+	height: 300px;
+	background: #333;
+	box-shadow: 1px 1px 3px #888;
+	color: #eee;
+}
+
+.bandSuggestWrapper {
+	width: 300px;
+	margin: 5px;
+	padding: 0;
+	float: right;
+	height: 300px;
+	background: #333;
+	box-shadow: 1px 1px 3px #888;
+	color: #eee;
+}
+
+.bandRecentlyAdded {
+	width: 400px;
+	margin: 5px;
+	padding: 0;
+	float: left;
+	height: 300px;
+	background: #333;
+	box-shadow: 1px 1px 3px #888;
+	color: #eee;
+}
+
+
+/*****************
+/*		spotify */
+
+.player {
+	background: #333;
+}
+
+.player .logo {
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	float: right;
+	right: 10px;
+	bottom: 8px;
+	background-image: url('images/spotifyLogo.jpg');
+	background-repeat: no-repeat;
+}
+
+.artist-name .ellipsis {
+	color: #a8a8a8;
+}
+
+.player .meta .progress-bar-container .controls .buffer {
+	background-color: #555;
+}
+
+.player .meta .progress-bar-container .controls .buffer .seeker {
+	background-color: #aaa;
+}
+
+.imageCenter {
+	overflow: hidden;
+	width: 230px;
+	height: 230px;
+	margin: 0 auto;
+}
+
+/***********************/
+/*			4.) POLL WIDGET	  	*/
+/***********************/
+
+.pollWidget {
+	width: 30%;
+	min-width: 260px;
+	max-width: 280px;
+	margin-right: 15px;
+	float: left;
+	background: #ffffff;
+	padding: 5px;
+	box-shadow: 1px 1px 3px #888;
+	display: block;
+}
+
+.pollWidget > h2 {
+	margin: 0;
+}
+
+.pollWidget form {
+	margin: 0 auto;
+	width: 90%;
+}
+
+.pollWidget p {
+	background-color: #aaa;
+    color: #333;
+	cursor: pointer;
+	height: 28px;
+	width: calc(100% - 10px);
+	margin: 1px 0px;
+	padding-top: 7px;
+	padding-left: 10px;
+	font-weight: bold;
+	font-family: PT Sans Bold;
+}
+
+.pollWidget p:hover {
+	background: #888;
+}
+
+.pollWidget p:active {
+	background: #555;
+	color: #aaa
+}
+
+
+
+.pollRadioButton {
+	display: none;
+}
+
+
+
+
+/***********************/
+/*			5.) ABOUT PAGE		*/
+/***********************/
+
+.aboutLiquidWrapper {
+	width: 100%;
+	height: 200px;
+	background: #1a880f;
+}
+
+
+
+
+
+

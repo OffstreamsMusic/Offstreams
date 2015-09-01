@@ -1,0 +1,202 @@
+header {
+	width: 100%;
+	height: 60px;
+	background: #000;
+	color: #eee;
+}
+
+.headerTable {
+	width: 100%;
+	margin: 0 auto;
+	height: 60px;
+}
+
+#headerLeft {
+	width: 33%;
+	height: 100%;
+}
+
+#headerCenter {
+	width: 34%;
+	height: 100%;
+}
+
+#headerRight {
+	width: 33%;
+	height: 100%;
+	padding: 0px;
+	margin: 0px;
+}
+
+#searchbar {
+	width: 90%;
+	max-width: 500px;
+	margin: 0 auto;
+	height: 25px;
+	background: #333;
+	border: none;
+	border-radius: 5px;
+	padding-left: 10px;
+	color: #eee;
+}
+
+nav {
+	height: 40px;
+	width: 100%;
+	background: #333;
+	color: #eee;
+}
+
+nav ul {
+	height: 40px;
+	margin: 0 auto;
+	font-size: 22px;
+	text-align: center;
+	padding-left: 0;
+}
+
+nav ul li {
+	display: inline-block;
+	padding-left: 5px;
+}
+
+.ulNavChild {
+	counter-increment: items;
+	height: 35px;
+	padding-top: 5px;
+}
+
+.ulNavChild:hover {
+	background: #aaa;
+}
+
+.ulNavChild:active {
+	background: #888;
+}
+
+nav ul a li:after {
+	font-family: PT Sans Bold;
+	padding-left: 10px;
+}
+
+nav ul a li:last-child:after {
+	content: "";
+}
+
+#loginRegisterWrapper {
+	width: 80%;
+	max-width: 300px;
+	margin: 0 auto;
+}
+
+#loginRegisterWrapper > div > span {
+	vertical-align: sub;
+	padding: 5px;
+	cursor: pointer;
+}
+
+#loginButton, #registerButton, #loginRegisterWrapper span {
+	width: 50%;
+	float: left;
+	height: 100%;
+}
+
+#loginSubmitButton, #registerSubmitButton {
+	width: 65%;
+	margin-top: 10px;
+	padding: 5px 0px;
+	cursor: pointer;
+	border-radius: 5px;
+	border: none;
+	color: #333;
+	font-family: PT Sans Bold;
+}
+
+#loginFormDisplay {
+	display: none;
+}
+
+#loginFormWrapper {
+	position: absolute;
+	background: #666;
+	margin: 0 auto;
+	margin-top: 12px;
+	box-shadow: 1px 1px 3px #333;
+}
+
+#registerFormDisplay {
+	display: none;
+}
+
+#registerFormWrapper {
+	position: absolute;
+	background: #666;
+	margin: 0 auto;
+	margin-top: 12px;
+	padding-bottom: 10px;
+	box-shadow: 1px 1px 3px #333;
+}
+
+#closeDialog {
+	cursor: pointer;
+	right: 10px;
+	position: absolute;
+}
+
+.liveSearchBox {
+	width: 90%;
+	max-width: 500px;
+	margin: 0 auto;
+	margin-top: 1px;
+	background: transparent;
+	position: absolute;
+	left: 0;
+	right: 0;
+}
+
+.searchUl {
+	list-style-type: none;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0;
+	background: #333;
+}
+
+.searchUl > li {
+	height: 70px;
+	margin: 0 auto;
+	color: #000;
+	width: 100%;
+	background: #fff;
+	margin-top: -16px;
+	background: -moz-linear-gradient(top, #656565 0%, #555555 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, 
+					color-stop(0%,#ededed),
+					color-stop(100%,#ddd));
+	border-bottom: 1px solid #333;
+}
+
+.searchbarForm {
+	position: relative;
+}
+
+.searchLiRight {
+	height: 100%;
+}
+
+.searchResultImg {
+	padding: 0;
+	margin: 0 auto;
+	width: 90px;
+	height: 70px;
+	float: left;
+}
+
+
+
+
+
+
+
+
+
