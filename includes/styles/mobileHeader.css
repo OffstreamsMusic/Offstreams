@@ -1,0 +1,221 @@
+header {
+	width: 100%;
+	height: 60px;
+	background: #000;
+}
+
+.headerTable {
+	width: 100%;
+	margin: 0 auto;
+	height: 60px;
+}
+
+#headerLeft {
+	width: 33%;
+	height: 100%;
+}
+
+#headerCenter {
+	width: 34%;
+	height: 100%;
+}
+
+#headerRight {
+	width: 33%;
+	height: 100%;
+}
+
+#searchbar {
+	width: calc(100% - 15px);
+	margin: 0 auto;
+	background: #333;
+	border: none;
+	padding-left: 15px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	font-size: 18px;
+	color: #eee;
+}
+
+#mobileNavButton, #mobileNavButtonClicked {
+	float: left; 
+	margin: 0;
+	margin-left: 20px;
+	padding: 0;
+}
+
+nav {
+	width: 65%;
+	background: #555;
+	margin: 0;
+	position: absolute;
+	display: none;
+	z-index: 1;
+}
+
+nav ul {
+	width: 100%;
+	margin: 0 auto;
+	padding: 0;
+	list-style-type: none;
+	color: #eee;
+	display: table;
+}
+
+.ulNavChild {
+	display: block;
+	border-bottom: 1px solid #eee;
+	padding-top: 12px;
+	padding-left: 20px;
+}
+
+#loginFormDisplay, #registerFormDisplay {
+	display: none;
+}
+
+#loginRegisterWrapper {
+	text-align: center;
+	color: #eee;
+	padding: 10px 0px;
+}
+
+#loginRegisterWrapper span {
+	font-family: PT Sans Bold;
+}
+
+#loginUsernameInput, #loginPasswordInput, #registerUsernameInput,
+#registerPasswordInput, #registerConfirmInput, #registerEmailInput {
+	border-radius: 5px;
+}
+
+#loginButton {
+	padding-top: 15px;
+	width: 49%;
+	float: left;
+	border-right: 2px solid #eee;
+	padding-bottom: 15px;
+	font-family: PT Sans Bold;
+	margin-top: -10px;
+}
+
+#registerButton {
+	padding-top: 15px;
+	width: 49%;
+	float: left;
+	padding-bottom: 12px;
+	font-family: PT Sans Bold;
+	margin-top: -10px;
+}
+
+#loginFormWrapper, #registerFormWrapper {
+	width: 90%;
+	margin: 0 auto;
+}
+
+#loginSubmitButton, #registerSubmitButton {
+	width: 100%;
+	margin-top: 30px;
+	padding: 5px 0px;
+	cursor: pointer;
+	border-radius: 5px;
+	border: none;
+	color: #333;
+	font-family: PT Sans Bold;
+}
+
+#loginRegisterWrapper > span:first-child {
+	float: left;
+	margin-left: 15px;
+	margin-top: 5px;
+	margin-bottom: 20px;
+}
+
+#loginRegisterWrapper > span:last-child {
+	float: right;
+	margin-right: 15px;
+	margin-top: 5px;
+	margin-bottom: 20px;
+}
+
+.mobileLogRegHead {
+	color: #eee;
+	font-family: PT Sans Bold;
+}
+
+.backButton {
+	position: absolute;
+	color: #eee;
+	text-decoration: underline;
+	width: 100%;
+	font-family: PT Sans Bold;
+	text-align: center;
+	left: 0;
+	bottom: 5%;
+}
+
+nav > ul > a:first-child > li {
+	border-top: 1px solid #eee;
+}
+
+.searchUl {
+	list-style-type: none;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0;
+	background: #454545; /* Old browsers */
+}
+
+.searchUl > li {
+	height: 70px;
+	margin: 0 auto;
+	color: #000;
+	width: 100%;
+	margin-top: -16px;
+	border-bottom: 1px solid #333;
+	background: -moz-linear-gradient(top, #656565 0%, #555555 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, 
+					color-stop(0%,#656565),
+					color-stop(100%,#555555));
+}
+
+.hiddenLink {
+	text-decoration: none;
+	color: #eee;
+	margin: 0;
+	padding: 0;
+}
+
+.searchbarForm {
+	position: relative;
+}
+
+.searchLiRight {
+	height: 100%;
+}
+
+.searchResultType {
+	margin: 0;
+}
+
+.searchResultName {
+	margin-bottom: 0;
+	font-weight: bold;
+	font-family: PT Sans Bold;
+}
+
+.searchResultImg {
+	padding: 0;
+	margin: 0 auto;
+	margin-right: 5px;
+	width: 90px;
+	height: 70px;
+	float: left;
+}
+
+
+
+
+
+
+
+

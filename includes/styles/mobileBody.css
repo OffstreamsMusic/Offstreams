@@ -1,0 +1,318 @@
+/************************************/
+/*																*/
+/*					DESKTOPBODY.CSS					*/
+/*																*/
+/*					1.) GENERAL							*/
+/*					2.) USER PAGE							*/
+/*					3.) BAND PAGE						*/
+/*																*/
+/************************************/
+
+/***********************/
+/*			1.) GENERAL			*/
+/***********************/
+
+body {
+	margin: 0 auto;
+	background: #f1f1f1;
+	font-family: PT Sans;
+}
+
+h1, h2, h3, h4, h5, h6, b, strong, th, .bold {
+	font-family: PT Sans Bold;
+}
+
+i, em {
+	font-family: PT Sans Italic;
+}
+
+.boldItalic {
+	font-family: PT Sans Bold Italic;
+}
+
+.aWhite {
+	text-decoration: none;
+	color: #eee;
+}
+
+.wrapper {
+	width: 100%;
+	overflow-x: hidden;
+}
+
+.shadow {
+	opacity: 1;
+	background: transparent;
+}
+
+.shadow.Effect {
+	opacity: .5;
+	background: #555;
+}
+
+.shadowEffect {
+	opacity: .5;
+	background: #555;
+}
+
+.center {
+	text-align: center;
+}
+
+.dialogBox {
+	padding: 20px 10px;
+	text-align: center;
+	color: #eee;
+	position: absolute;
+}
+
+.successDialog {
+	background: #008000;
+}
+
+.logError {
+	background: #bf0000;
+}
+
+.editButton {
+	border: none;
+	background: #555;
+	color: #eee;
+	height: 40px;
+	width: 135px;
+	margin-left: 5px;
+	font-weight: bold;
+	font-family: PT Sans Bold;
+}
+
+.inputBox {
+	width: calc(100% - 10px);
+	height: 40px;
+	background: #333;
+	color: #eee;
+	padding-left: 10px;
+	margin-top: 10px;
+	border: none;
+}
+
+.selectBox {
+	width: 100%;
+	height: 40px;
+	background: #333;
+	margin-top: 10px;
+	color: #eee;
+	padding-left: 10px;
+	border: none;
+}
+
+
+
+
+/***********************/
+/*			2.) USER PAGE	  		*/
+/***********************/
+
+.profileWrapper {
+	clear: both;
+	width: calc(100% - 20px);
+	height: 275px;
+	background: #fff;
+	margin: 10px;
+}
+
+.profileInfoWrapper {
+	width: 40%;
+	float: left;
+}
+
+.profileInfoWrapper > .center {
+	text-align: left;
+	margin: 0 auto;
+	padding-left: 20px;
+}
+
+.profileInfoWrapper > a > .editButton {
+	display: block;
+	clear: left;
+}
+
+#profilePic {
+	width: 150px;
+	height: 150px;
+}
+
+.profileInfoContainer {
+	width: calc(60% - 10px);
+	float: right;
+	padding-top: 40px;
+}
+
+#profileEditContainer {
+	width: 90%;
+	margin: 0 auto;
+	background: #888;
+	padding: 10px;
+}
+
+#profileEditContainer > select {
+	height: 40px;
+}
+
+#profileEditContainer > select > option{
+	padding: 10px 0;
+}
+
+.profileInfoLeft {
+	width: 40%;
+	float: left;
+}
+
+.profileInfoRight {
+	width: calc(60% - 10px);
+	float: right;
+	margin: 0 5px
+}
+
+.profileWidgetBio {
+	clear: both;
+}
+
+.editBox {
+	border-radius: 0px;
+	height: 40px;
+}
+
+.inputTextarea {
+	width: 100%;
+	border: none;
+	background: #333;
+	color: #eee;
+	height: 100px;
+}
+
+#readMore {
+	text-decoration: underline;
+	font-family: PT Sans Bold;
+	font-weight: bold;
+	color: #333;
+	float: right;
+	padding-right: 15px;
+}
+
+.editProfileInfoWrapper, .editProfileImageWrapper {
+	clear: both;
+	padding-top: 10px;
+}
+
+#profileEditContainer p {
+	font-weight: bold;
+	font-family: PT Sans Bold;
+}
+
+#submitEditProfileButton {
+	display: block;
+	margin: 0 auto;
+	width: 60%;
+	margin-top: 10px;
+}
+
+.desktopBackButton {
+	margin: 0 auto;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	color: #333;
+	text-align: center;
+	font-weight: bold;
+	font-family: PT Sans Bold;
+}
+
+.desktopBackButton a:visited {
+	color: #333;
+}
+
+#userBdayMonth, #userBdayDay, #userBdayYear {
+	width: 60px;
+	height: 40px;
+	margin: 0 auto;
+}
+
+#changeImage, #editProfile {
+	float: left;
+	clear: left;
+	padding-bottom: 10px;
+}
+
+.editLocationWrapper, .editGenderWrapper, .editBioWrapper {
+	margin-top: 10px;
+}
+
+.imageCenter {
+	overflow: hidden;
+	width: 135px;
+	height: 135px;
+	margin: 5px 0 10px 5px;
+}
+
+
+
+/***********************/
+/*			3.) POLL WIDGET		*/
+/***********************/
+
+.pollWidget {
+	margin: 10px;
+	width: calc(100% - 20px);
+	background: #fff;
+}
+
+.pollWidget > h2 {
+	text-align: left;
+	padding: 10px 0 0 10px;
+	margin: 0;
+}
+
+.pollWidget p {
+	background-color: #aaa;
+    color: #333;
+	cursor: pointer;
+	height: 35px;
+	width: calc(100% - 10px);
+	margin: 1px 0px;
+	padding-top: 15px;
+	padding-left: 10px;
+	font-size: 16px;
+	font-weight: bold;
+	font-family: PT Sans Bold;
+}
+
+#submitPollButton {
+	width: 100%;
+	border: none;
+	height: 40px;
+	background: #333;
+	color: #eee;
+	font-weight: bold;
+	font-family: PT Sans Bold;
+	font-size: 18px;
+}
+
+.pollRadioButton {
+	display: none;
+}
+
+.aboutLiquidWrapper {
+	width: 100%;
+	height: 150px;
+	background: #1a880f;
+}
+
+
+
+
+
+
+
+
+
+
+
