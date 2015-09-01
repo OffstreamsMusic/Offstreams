@@ -1,0 +1,18 @@
+<?php if (isset($_SESSION['username'], $_GET['user'], $_GET['change']) && $s->lower($_GET['user']) == $s->lower($_SESSION['username'])){ ?>
+
+	<?php if ($_GET['change'] == "edit") { 
+	
+		$selection = array("Image" => "Change", "Profile" => "Edit");
+		
+		// LOOP THROUGH EACH BUTTON
+		foreach ($selection as $url => $preffix) { ?>
+		
+			<a id="<?php echo $s->lower($preffix) . $url; ?>" href="<?php echo BASE_URI . "user/" . $s->lower($row['username']) . "/edit/" . $s->lower($url);?>" class="aWhite">
+				<button class="editButton"><?php echo $preffix . " " . $url; ?></button>
+			</a>
+			
+		<?php } ?>
+
+	<?php } ?>
+
+<?php } ?>

@@ -1,0 +1,50 @@
+<?php
+	// INCLUDED IN "/USERS/INDEX.PHP"
+?>
+
+<!-- PROFILE INFO -->
+<div class="profileInfoWrapper">
+
+
+	<!-- PROFILE PIC -->
+	<h3 class="center" style="margin: 5px 0px"><?php echo $row['username']; ?></h3>
+	<div id="profilePicWrapper">
+		<div class="imageCenter">
+			<img src="<?php echo $imgLocation ?>" id="profilePic" style="<?php echo $profilePicStyling; ?>"/>
+		</div>
+	</div>
+	
+	
+	<?php include (BASEPATH . "users/widgets/profileEditButton.html"); ?>
+	
+	<!-- PROFILE INFO -->
+	<div class="profileInfoContainer">
+	
+		<?php
+		foreach ($pieces as $piece => $value) {
+		
+			if (empty($value)) {
+				continue;
+			} else {
+				echo "<div class='profileInfoLeft'><strong>$piece</strong></div>";
+				echo "<div class='profileInfoRight'>$value</div>";
+			}
+		
+		}
+		
+		// Bio section
+		if (!empty($row['user_bio'])){ ?>
+			
+			<div class='profileInfoLeft'><strong>Bio:</strong></div>
+			<div class="profileWidgetBio">
+				<p id="profileWidgetBio"><?php echo $row['user_bio']; ?></p>
+			</div>
+			<span id="readMore">Read More</span>
+			
+		<?php }
+		
+		include (BASEPATH . "users/widgets/uniqueProfileEditButtons.html"); ?>
+		
+	</div>
+	
+</div>

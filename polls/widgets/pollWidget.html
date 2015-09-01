@@ -1,0 +1,32 @@
+<div class="pollWidget">
+	<h2 class="center">Poll:</h2>
+	
+	
+	<?php if (isset($_SESSION['active']) && $_SESSION['active'] == "active") { ?>
+	<!-- USER HAS ACTIVATED ACCOUNT FOR POLLS -->
+	<h4 class="center" style="margin: 0 auto;">What is your favorite genre?</h4>
+	<form action="<?php echo BASE_URI . 'polls/process/pollWidget.php';?>" method="post" id="pollSubmitForm">
+		<input type="hidden" name="pollId" value="<?php echo $pollId; ?>" />
+		<?php
+			for ($i = 0; $i < count($name); $i++){ ?>
+				
+				<p>
+					<input type="radio" name="pollValues" value="<?php echo $name[$i]; ?>" id="<?php echo $answerId[$i]; ?>" class="pollRadioButton"/>
+					<?php echo $name[$i]; ?>
+				</p>
+			
+			<?php } ?>
+		<div class="submitButton">
+			<input type="submit" name="submitPoll" id="submitPollButton" class="" />
+		</div>
+	</form>
+	
+	
+	<?php } else { ?>
+	<!-- USER NEEDS TO ACTIVATE ACCOUNT -->
+	<br/>
+	<span class="center"><strong>Please activate your account to participate in polls</strong></span>
+	<?php } ?>
+	
+	
+</div>

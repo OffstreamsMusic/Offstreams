@@ -1,0 +1,12 @@
+<?php if (isset($_SESSION['username']) && $s->lower($_GET['user']) == $s->lower($_SESSION['username'])){ ?>
+	
+	<?php if (!isset($_GET['change']) || $_GET['change'] != "edit") { ?>
+	
+	<!-- EDIT BUTTON -->
+	<a href="<?php echo BASE_URI . "user/" . $s->lower($row['username']) . "/edit/profile";?>" class="aWhite">
+		<button class="editButton">Edit</button>
+	</a>
+	
+	<?php } ?>
+	
+<?php } ?>

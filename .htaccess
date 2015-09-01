@@ -1,0 +1,45 @@
+#FallbackResource index.php
+
+RewriteEngine On
+
+#RewriteCond %{REQUEST_FILENAME} -f [OR]
+#RewriteCond %{REQUEST_FILENAME} -l [OR]
+#RewriteCond %{REQUEST_FILENAME} -d
+
+
+RewriteBase /
+
+
+# SEARCH RESULTS
+RewriteRule ^search/(.*)$ ./offstreams/searchs/search.php?search=$1 [QSA]
+
+
+# CATEGORY PAGE
+RewriteRule ^([^/.]+)$ /offstreams/index.php?cat=$1 [QSA]
+
+
+# USER PAGE
+RewriteRule ^user/([^/]*)$ /offstreams/users/index.php?user=$1 [L]
+# USER REGISTERED REDIRECT
+RewriteRule ^user/([^/]*)/s/([^/]*)$ /offstreams/users/index.php?user=$1&s=$2 [L]
+# USER EDITING PAGE
+RewriteRule ^user/([^/]*)/([^/]*)$ /offstreams/users/edit.php?user=$1&change=$2 [nocase,last]
+# USER EDITING SPECIFIC PAGE
+RewriteRule ^user/([^/]*)/([^/]*)/([^/]*)$ /offstreams/users/edit.php?user=$1&change=$2&edit=$3 [nocase,last]
+
+
+# BAND PAGE
+RewriteRule ^band/([^/]*)$ /offstreams/bands/index.php?band=$1 [L]
+
+
+# SEARCH RESULTS
+RewriteRule ^search/([^/]*)$ offstreams/searchs/search.php?search=$1 [QSA]
+#RewriteRule ^([^/]*)$ /searchs/search.php?search=$1 [L]
+
+
+# ABOUT US
+RewriteRule ^about/([^/]*)$ offstreams/abouts/index.php?type=$1 [L]
+
+
+# ADMIN
+RewriteRule ^admin/([^/]*)$ offstreams/admins/index.php?cat=$1 [L]

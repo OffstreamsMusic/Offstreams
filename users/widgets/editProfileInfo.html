@@ -1,0 +1,86 @@
+<?php include (BASEPATH . "users/process/editProfileInfo.php"); ?>
+<div class="editProfileInfoWrapper">
+	<h3 style="margin: 5px 0px; padding-left: 30px;">Edit Profile:</h3>
+	
+	<form action="<?php echo BASE_URI . "users/process/submitProfileInfo.php"; ?>" method="post" id="editProfileForm">
+		<div id="profileEditContainer">
+			
+			
+			<!-- NAME -->
+			<div id="editNameWrapper">
+				<p class="strong center" style="margin: 0 auto;">Name:</p>
+				<div class="userNameWrap" style="width: 100%;">
+					<input type="text" name="userName" class="inputBox marginCenter editBox" value="<?php echo $row['user_name']; ?>" id="userNameBox"/>
+				</div>
+			</div>
+			
+			
+			<!-- LOCATION -->
+			<div id="editLocationWrapper">
+				<p class="strong center" style="margin: 0 auto;" id="editLocationTitle">Location:</p>
+				
+				<!-- CITY -->
+				<input type="text" name="userCity" class="inputBox marginCenter editBox" id="userCityBox" placeholder="City" value="<?php echo $row['user_city']; ?>"/>
+				
+				<!-- STATE -->
+				<span id='editStateSelect'>
+					<?php if ($row['user_country'] == "Canada" || $row['user_country'] == "Australia" || $row['user_country'] == "United States") {
+						include (BASEPATH . "users/widgets/stateList.html");
+					} ?>
+				</span>
+				
+				<!-- COUNTRY -->
+				<?php include(BASEPATH . "users/widgets/countryList.html"); ?>
+			</div>
+			
+			
+			<!-- GENDER -->
+			<div id="editGenderWrapper">
+				<p class="strong center" style="margin: 0 auto;" id="editGenderTitle">Gender:</p>
+				
+				<select name="userGender" class="selectBox editBox" style="display: block">
+					<?php
+						$gender = array("martian", "male", "female");
+						for ($i = 0; $i < count($gender); $i++) {
+							$select = ($row['user_gender'] == $gender[$i]) ? "selected" : "";
+							echo "<option value='$gender[$i]' " . $select . ">" . ucfirst($gender[$i]) . "</option>"; 
+						}
+					?>
+				</select>
+			</div>
+			
+			
+			<!-- BIRTHDATE -->
+			<div id="editBirthdayWrapper">
+				<p class="strong center" style="margin: 0 auto;" id="editGenderTitle">Birthday:</p>
+				
+				<input type="text" name="userBdayMonth" class="inputBox editBox" id="userBdayMonth" placeholder="MM" value="<?php echo $month;?>"/>
+				<span> / </span>
+				<input type="text" name="userBdayDay" class="inputBox editBox" id="userBdayDay" placeholder="DD" value="<?php echo $day;?>"/>
+				<span> / </span>
+				<input type="text" name="userBdayYear" class="inputBox editBox" id="userBdayYear" placeholder="YYYY" value="<?php echo $year;?>"/>
+			</div>
+			
+			
+			<!-- BIO -->
+			<div id="editBioWrapper">
+				<p class="strong" style="margin: 0 auto;" id="editGenderTitle">Bio:</p>
+				
+				<textarea name="userBio" id="userBio" class="inputTextarea editBox" placeholder="Write a short description of yourself or your music taste...">
+					<?php echo $row['user_bio']; ?>
+				</textarea>
+			</div>
+			
+			<div id="submitFormButton">
+				<input type="submit" value="Submit Form" name="submitProfileEdit" id="submitEditProfileButton" class="editButton editBox" />
+			</div>
+			
+		</div>
+		
+	</form>
+	
+	<div class="desktopBackButton">
+		<a href="<?php echo BASE_URI . "user/" . $s->lower($_SESSION['username']);?>">Back to Profile</a>
+	</div>
+	
+</div>
