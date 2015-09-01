@@ -1,0 +1,29 @@
+<div class="bandSliderWrapper">
+	<p class="center">Band Feature Slider</p>
+</div>
+<div class="bandSuggestWrapper">
+	<p class="center">Band Recommendation List</p>
+</div>
+<div class="bandRecentlyAdded">
+	<p class="center">Band's Recently Added</p>
+</div>
+<form action="<?php echo BASE_URI . "band"; ?>" method="post">
+	<input type="text" name="changeSong" id="changeSong" />
+	<input type="submit" value="Submit" name="submit" />
+</form>
+<?php
+
+	$sql = "SELECT * FROM `songs`";
+	$query = $conn->query($sql);
+	while ($row = $query->fetch_assoc()) { ?>
+		<button class="musicButton" value="<?php echo $row['song_name']; ?>" name="myData">
+			<?php echo $row['song_name']; ?>
+		</button>
+	<?php }
+
+?>
+<form action="<?php echo BASE_URI . "bands/process/bandHomepage.php";?>" method="post" enctype="multipart/form-data">
+	<input type="file" name="song" />
+	<input type="submit" value="Upload" name="submitMp3" />
+</form>
+<iframe id="musicPlayer" src="https://embed.spotify.com/?uri=<?php echo (isset($_POST['submit'])) ? $_POST['changeSong'] :  "spotify:track:51pQ7vY7WXzxskwloaeqyj"; ?>" width="640" height="80" frameborder="0" allowtransparency="true"></iframe>
