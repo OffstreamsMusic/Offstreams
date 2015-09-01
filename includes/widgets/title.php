@@ -2,6 +2,8 @@
 	
 	$title = new siteTitle;
 	$url = new urlSplit;
+	$camel = new camelCaseSplit;
+	$zepp = new zeppTranslate;
 	
 	$arg = $url->splitURL();
 	$method = $arg[0][0];
@@ -20,6 +22,13 @@
 		case "cat":
 			$cat = $title->createTitle($_GET['cat'], "nav_name", "navigation");
 			echo $cat;
+			break;
+			
+		case "band":
+			$name = $zepp->zeppCode("string", "zepp", $camel->camelCase("break", $_GET['band']));
+			$band = $title->createTitle($name, "band_name", "bands");
+			$band = $zepp->zeppCode("zepp", "symbol", $band);
+			echo $band;
 			break;
 			
 		default:

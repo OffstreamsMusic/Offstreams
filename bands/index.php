@@ -1,28 +1,65 @@
-<?php  ?>
 <?php
 	
 	
 	// ACTUAL BAND PAGE CONTROL
 	if (isset($_GET['band'])) {
 		
-		require ("../includes/header.php");
 		
+		
+		///////////////////////////
+		// INCLUDED PAGES	////
+		///////////////////////////
+		require ("../includes/header.php");
 		include(BASEPATH . "bands/process/bandPageModel.php");
 		include(BASEPATH . "bands/widgets/bandPageView.php");
 		
-		$zepp = new zeppTranslate;
-		$camel = new camelCase;
 		
+		
+		///////////////////////////
+		// CALL CLASSES		 ///
+		///////////////////////////
+		$zepp = new zeppTranslate;
+		$camel = new camelCaseSplit;
+		
+		
+		
+		////////////////////////////////////
+		// URL SPLIT AND CONVERT  ////
+		////////////////////////////////////
 		$val = $camel->camelCase("break", $_GET['band']);
 		$bandZepp = $zepp->zeppCode("string", "zepp", $val);
 		
 		
+		
+		///////////////////////////
+		// MODEL				////
+		////////////////////////////
+		
+		$model = new bandPageModel($conn);
+		
+		// VALUES TO PULL
 		$columns = array("band_name", "band_image");
 		
-		#$view = new bandPageView($conn);
-		#$row = $view->queryBand($bandZepp, $columns);
-		#echo $row['band_name'];
-		echo $bandZepp;
+		// Store pulled values
+		$row = $model->queryBand($bandZepp, $columns);
+		#print_r($row);
+		
+		
+		
+		////////////////////////////
+		// VIEWS				////
+		////////////////////////////
+		$refer = array("bandName", "bandImage");
+		$view = new bandPageView($row);
+		echo $view->band_name;
+		
+		
+		
+		/////////////////////////////
+		// BOOTSTRAP				//
+		/////////////////////////////
+		require("bootstrap/bandPageBootstrap.php");
+		
 		
 	
 	// BASE FILES	
