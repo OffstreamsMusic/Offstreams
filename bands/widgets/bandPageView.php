@@ -13,8 +13,29 @@
 			}
 		}
 		
-		public function bandImage($source, $height, $width) {
-			$location = BASE_URI . "images/bands/" . $source;
+		public function bandImageSrc($type, $source) {
+			
+			switch($type) {
+				
+				case "image":
+					$folder = "";
+					break;
+				
+				case "header":
+					$folder = "headers/";
+					break;
+				
+				default:
+					return "Wrong source type given for parameter one";
+					break;
+			}
+			
+			// Default band header
+			if (empty($source) && $type == "header") {
+				$source = "defaultBandHeader.jpg";
+			}
+			
+			$location = BASE_URI . "images/bands/" . $folder . $source;
 			return $location;
 		}
 		

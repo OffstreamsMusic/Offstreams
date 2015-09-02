@@ -307,13 +307,32 @@
 				$widthMargin = (($maxWidth / 2) - ($width / 2));
 				$heightMargin = 0;
 				
-			// If picture is smaller than maximum size
-			} elseif ($width < $maxWidth) {
-				$ratio = $maxHeight / $height;
-				$height = $ratio * $height;
-				$width = $ratio * $maxWidth;
+				/*
+				$ratio = $ / $height;
+				$height = $maxHeight;
+				$width = $maxWidth / $ratio;
 				$widthMargin = (($maxWidth / 2) - ($width / 2));
 				$heightMargin = 0;
+				// need h/w margins
+				// need h/w */
+				
+			// If picture is smaller than maximum size
+			} elseif ($width < $maxWidth) {
+				// If frame width is bigger than height
+				if ($maxWidth > $maxHeight) {
+					$ratio = $maxWidth / $width;
+					$width = $maxWidth;
+					$height = $ratio * $height;
+					$heightMargin = (($maxHeight / 2) - ($height / 2));
+					$widthMargin = 0;
+				// If frame height is bigger than width
+				} else {
+					$ratio = $maxHeight / $height;
+					$height = $ratio * $height;
+					$width = $ratio * $maxWidth;
+					$widthMargin = (($maxWidth / 2) - ($width / 2));
+					$heightMargin = 0;
+				}
 			}
 		
 		// If Picture is portrait
@@ -337,7 +356,7 @@
 			}
 			
 		// Picture is square
-		} else {
+		} elseif ($width == $height) {
 			
 			// If maxWidth is more than maxHeight
 			if ($maxHeight < $maxWidth) {
@@ -361,6 +380,8 @@
 				$widthMargin = 0;
 			}
 			
+		} else {
+			return "WTF";
 		}
 		
 		$picStyling = "width: " . $width . "px; " . "height: " . $height . "px; margin-top: " . $heightMargin . "px; margin-left: " . $widthMargin . "px;";

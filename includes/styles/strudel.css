@@ -17,3 +17,39 @@
 	font-family: PT Sans Bold Italic;
 	src: url(fonts/PT_Sans-Web-BoldItalic.ttf);
 }
+
+@-moz-keyframes rotateRightObject /*--for firefox--*/{ /* Molecule Rotation FireFox */
+    from{
+        -moz-transform:rotate(0deg);
+    }       
+    to{
+        -moz-transform:rotate(-360deg);
+    }                       
+}
+
+@-webkit-keyframes rotateRightObject /*--for webkit--*/{ /* Molecule Rotation Chrome */
+    from{
+        -webkit-transform:rotate(0deg);
+    }       
+    to{
+        -webkit-transform:rotate(-360deg);
+    }                       
+}
+
+@-moz-keyframes rotateLeftObject /*--for firefox--*/{ /* Atom Rotation FireFox */
+    from{
+        -moz-transform:rotate(0deg);
+    }       
+    to{
+        -moz-transform:rotate(360deg);
+    }                       
+}
+
+@-webkit-keyframes rotateLeftObject /*--for webkit--*/{ /* Atom Rotation Chrome */
+    from{
+        -webkit-transform:rotate(0deg);
+    }       
+    to{
+        -webkit-transform:rotate(360deg);
+    }                       
+}

@@ -386,6 +386,18 @@ $(document).ready(function(){
 	
 	
 	
+	$(function() {
+    $("#bandDropInfoButton").click(function() {
+      $(this).addClass("dropInfoButton", 1000, callback);
+    });
+ 
+    function callback() {
+      setTimeout(function() {
+        $("#bandDropInfoButton").removeClass("dropInfoButton");
+      }, 1000 );
+    }
+  });
+	
 	
 	
 	

@@ -20,6 +20,7 @@
 		///////////////////////////
 		$zepp = new zeppTranslate;
 		$camel = new camelCaseSplit;
+		$image = new imageCentering;
 		
 		
 		
@@ -38,7 +39,7 @@
 		$model = new bandPageModel($conn);
 		
 		// VALUES TO PULL
-		$columns = array("band_name", "band_image");
+		$columns = array("band_name", "band_image", "band_header");
 		
 		// Store pulled values
 		$row = $model->queryBand($bandZepp, $columns);
@@ -51,9 +52,19 @@
 		////////////////////////////
 		$refer = array("bandName", "bandImage");
 		$view = new bandPageView($row);
-		echo $view->band_name;
 		
 		
+		
+		////////////////////////////
+		// DEVELOP				 ////
+		////////////////////////////
+		$imgWidth = 375;
+		$imgHeight = 250;
+		$imgLoc = $view->bandImageSrc("image", $view->band_image);
+		$imgStyle = $image->imgSpecs($imgLoc, $imgWidth, $imgHeight);
+		$imgHeaderLoc = $view->bandImageSrc("header", $view->band_header);
+		$imgHeaderStyle = $image->imgSpecs($imgHeaderLoc, 900, 200);
+			
 		
 		/////////////////////////////
 		// BOOTSTRAP				//
