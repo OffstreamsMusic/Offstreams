@@ -81,6 +81,7 @@
 		$model->band["active"] = $model->band["formed"] . " - " . $model->band['disbanded'];
 		$view->merchButtons();
 		#print_r($model->band);
+		#echo $model->band["google"];
 		
 		// band info [$title => $information]
 		$infoTitles = array("Hometown" => array("location"),

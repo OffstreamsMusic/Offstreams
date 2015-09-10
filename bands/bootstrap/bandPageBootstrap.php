@@ -1,4 +1,4 @@
-<!--
+<!-- HEADER
 <div class='bandHeaderWrapper' style="height: 200px; width: 100%;">
 	<div class='bandHeaderImageWrapper' style="height: inherit; width: 100%; background: #fff; box-shadow: 1px 1px 3px #333;">
 		<!-- BAND HEADER IMAGE GOES HERE --><!--

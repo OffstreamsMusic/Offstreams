@@ -3,6 +3,9 @@
 	class bandPageView {
 		
 		public $band;
+		public $merchArray = array("google", "itunes", "amazon", "merchLink");
+		
+		
 		
 		// Create values from bands
 		public function __construct($values = array()) {
@@ -16,6 +19,8 @@
 				$this->{$key} = $zepp->zeppCode("zepp", "symbol", $val);
 			}
 		}
+		
+		
 		
 		public function bandImageSrc($type, $source) {
 			
@@ -44,16 +49,13 @@
 		}
 		
 		
-		// DECLARE MERCH BUTTONS
-		public function merchButtons() {
+		
+		private function merchAvailable($link) {
 			
 			global $model;
 			
-			$array = array("google", "itunes", "amazon", "merchLink");
-			
-			// Create link button
-			foreach ($array as $link) {
-				
+			// If merchandise link has a value
+			if ($model->band[$link] != null) {
 				
 				$button = "
 					<a href='" . $model->band[$link] . "' target='_blank' class='aWhite'>
@@ -62,7 +64,42 @@
 						  ";
 				
 				$model->band[$link] = $button;
-				#echo $model->band[$link];
+				
+			} else {
+				
+				// Band has no merch for sale
+				if ($link == "merchLink") {
+					
+					$button = "Band has no merch for sale";
+					
+				// Music not available on major seller
+				} else {
+					
+					$button = "Not Available on " . $link;
+					
+				}
+				
+				// Reset original link value to the button's HTML or "N/A" error
+				$model->band[$link] = $button;
+				
+			}
+			
+		}
+		
+		
+		// DECLARE MERCH BUTTONS
+		public function merchButtons() {
+			
+			global $model;
+			
+			$array = $this->merchArray;
+			
+			
+			// Create link button
+			foreach ($array as $link) {
+				
+				echo $this->merchAvailable($link);
+				
 			}
 			
 			#return $model->band;

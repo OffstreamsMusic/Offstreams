@@ -463,7 +463,7 @@ i, em {
 
 .bandInfoContainer {
 	width: 590px;
-	height: 290px;
+	height: 310px;
 	background: #fff;
 	clear: both;
 	margin-top: 10px;
@@ -493,7 +493,7 @@ i, em {
 
 .bandInfo {
 	margin: 0 auto;
-	padding: 10px 0px;
+	padding: 12px 0px;
 	padding-left: 10px;
 	font-weight: bold;
 	font-family: PT Sans Bold;
@@ -502,7 +502,7 @@ i, em {
 
 .bandInfoValues {
 	margin: 0 auto;
-	padding: 10px 0px;
+	padding: 12px 0px;
 	font-size: 16px;
 	height: 20px;
 	overflow: hidden;
