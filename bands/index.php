@@ -12,6 +12,9 @@
 		require ("../includes/header.php");
 		include(BASEPATH . "bands/process/bandPageModel.php");
 		include(BASEPATH . "bands/widgets/bandPageView.php");
+		include(BASEPATH . "polls/process/pollModel.php");
+		include(BASEPATH . "polls/widgets/pollView.php");
+		include(BASEPATH . "albums/process/albumModel.php");
 		
 		
 		
@@ -37,21 +40,28 @@
 		////////////////////////////
 		
 		$model = new bandPageModel($conn);
+		$album = new AlbumModel;
+		$poll = new PollModel($conn);
 		
 		// VALUES TO PULL
-		$columns = array("band_name", "band_image", "band_header");
+		$columns = array("band_name", "band_image", "band_header",
+								  "band_city", "band_state", "band_country",
+								  "band_bio", "band_formed", "band_disbanded",
+								  "band_google", "band_itunes", "band_amazon",
+								  "band_merchLink");
 		
 		// Store pulled values
 		$row = $model->queryBand($bandZepp, $columns);
-		#print_r($row);
+		$pollData = $poll->newPoll();
 		
 		
 		
 		////////////////////////////
 		// VIEWS				////
 		////////////////////////////
-		$refer = array("bandName", "bandImage");
 		$view = new bandPageView($row);
+		$polls = new PollView($pollData);
+		$side = $polls->setFloat("right");
 		
 		
 		
@@ -64,7 +74,25 @@
 		$imgStyle = $image->imgSpecs($imgLoc, $imgWidth, $imgHeight);
 		$imgHeaderLoc = $view->bandImageSrc("header", $view->band_header);
 		$imgHeaderStyle = $image->imgSpecs($imgHeaderLoc, 900, 200);
-			
+		
+		
+		$model->modelResults();
+		$model->band['formed'] = substr($model->band['formed'], 0, 4);
+		$model->band["active"] = $model->band["formed"] . " - " . $model->band['disbanded'];
+		$view->merchButtons();
+		#print_r($model->band);
+		
+		// band info [$title => $information]
+		$infoTitles = array("Hometown" => array("location"),
+								   "Years Active" => array("active"),
+								   "About" =>  array("bio"),
+								   "Google Play" =>  array("google"),
+								   "iTunes" =>  array("itunes"),
+								   "Amazon" =>  array("amazon"),
+								   "Merch" =>  array("merchLink"));
+								   
+		
+		
 		
 		/////////////////////////////
 		// BOOTSTRAP				//
@@ -72,6 +100,10 @@
 		require("bootstrap/bandPageBootstrap.php");
 		
 		
+	
+	
+	
+	
 	
 	// BASE FILES	
 	} else {

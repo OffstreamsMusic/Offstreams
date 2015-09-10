@@ -10,6 +10,8 @@
 /*																*/
 /************************************/
 
+
+
 /***********************/
 /*			1.) GENERAL			*/
 /***********************/
@@ -171,6 +173,7 @@ i, em {
 }
 
 
+
 /***********************/
 /*			2.) USER PAGE	  		*/
 /***********************/
@@ -231,7 +234,7 @@ i, em {
 	text-align: center;
 }
 
-.editButton, #submitPollButton {
+.editButton, #submitPollButton, #newPollButton  {
 	border: none;
 	border-radius: 5px;
 	width: 200px;
@@ -331,6 +334,11 @@ i, em {
 	display: block;
 }
 
+.imageCenter {
+	overflow: hidden;
+}
+
+
 
 /***********************/
 /*			3.) BAND PAGE	  	*/
@@ -396,6 +404,7 @@ i, em {
 	height: 250px;
 	margin: 0 auto;
 	float: left;
+	margin-bottom: 15px;
 }
 
 .bandNameContainer > p {
@@ -426,54 +435,90 @@ i, em {
 #bandDropInfoButton {
 	width: 50px;
 	height: 50px;
-	margin-top: -25px;
+	margin-top: -35px;
 	cursor: pointer;
 }
 
-.dropInfoRotated {
-  transform: rotate(180deg);
-  -ms-transform: rotate(180deg); /* IE 9 */
-  -moz-transform: rotate(180deg); /* Firefox */
-  -webkit-transform: rotate(180deg); /* Safari and Chrome */
-  -o-transform: rotate(180deg); /* Opera */
-}
-
-/*****************
-/*		spotify */
-
-.player {
-	background: #333;
-}
-
-.player .logo {
-	width: 20px;
-	height: 20px;
-	position: absolute;
-	float: right;
-	right: 10px;
-	bottom: 8px;
-	background-image: url('images/spotifyLogo.jpg');
-	background-repeat: no-repeat;
-}
-
-.artist-name .ellipsis {
-	color: #a8a8a8;
-}
-
-.player .meta .progress-bar-container .controls .buffer {
-	background-color: #555;
-}
-
-.player .meta .progress-bar-container .controls .buffer .seeker {
-	background-color: #aaa;
-}
-
-.imageCenter {
-	overflow: hidden;
-	width: 230px;
-	height: 230px;
+.faqContainer {
+	width: 95%;
+	max-width: 1200px;
 	margin: 0 auto;
+	background: #fff;
 }
+
+.faqQuestion {
+	color: #eee;
+	background: #333;
+	padding: 10px 5px;
+	padding-left: 15px;
+	font-weight: bold;
+	font-family: PT Sans Bold;
+	cursor: pointer;
+}
+
+.faqAnswer {
+	background: #ddd;
+	padding: 5px;
+}
+
+.bandInfoContainer {
+	width: 590px;
+	height: 290px;
+	background: #fff;
+	clear: both;
+	margin-top: 10px;
+	display: none;
+	box-shadow: 1px 1px 3px #333;
+	float: left;
+	padding: 5px;
+}
+
+.bandInfoWrapper {
+	margin-bottom: 15px;
+	float: left;
+	clear: right;
+}
+
+.bandInfoLeftCol {
+	width: calc(30% - 1px);
+	height: 100%;
+	float: left;
+}
+
+.bandInfoRightCol {
+	width: calc(70% - 1px);
+	height: 100%;
+	float: right;
+}
+
+.bandInfo {
+	margin: 0 auto;
+	padding: 10px 0px;
+	padding-left: 10px;
+	font-weight: bold;
+	font-family: PT Sans Bold;
+	font-size: 16px;
+}
+
+.bandInfoValues {
+	margin: 0 auto;
+	padding: 10px 0px;
+	font-size: 16px;
+	height: 20px;
+	overflow: hidden;
+	padding-left: 10px;
+}
+
+.evenGray {
+	background: #888;
+	color: #f1f1f1;
+}
+
+.merchButton {
+	margin-top: -7.5px;
+}
+
+
 
 /***********************/
 /*			4.) POLL WIDGET	  	*/
@@ -529,6 +574,9 @@ i, em {
 }
 
 
+#newPollButton > span {
+	vertical-align: middle;
+}
 
 
 /***********************/

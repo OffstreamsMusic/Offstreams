@@ -155,6 +155,7 @@ $(document).ready(function(){
 	});
 	
 	
+	
 	// POLL AJAX
 	$("#pollSubmitForm").on("submit", function(e){
 		e.preventDefault();
@@ -163,24 +164,24 @@ $(document).ready(function(){
 		var pollId = $("input[type=hidden]", this).val();
 		var answerId = $("input[name=pollValues]:checked", this).attr("id");
 		
-		console.log(answerId);
-		
 		$.ajax({
 			
 			url: action,
 			type: 'POST',
 			data: {submitPoll: radioButton, pollId, answerId},
 			success: function(value) {
-				$(".pollWidget form").remove();
-				$(".pollWidget").append("Thanks for submitting your vote: " + value);
-				$(".pollWidget").append("<br /><br/><strong id='newPollButton'>Load New Poll</strong>");
+				$("#pollSubmitForm").remove();
+				$(".pollWidget > h4").after("Thanks for submitting your vote:<div class='center'>" + value + "</div>");
+				$(".loadNewPollForm").css("display", "block");
+				$("#newPollButton").css("display", "block");
 			},
 			fail: function(e) {
 				console.log(e);
 			}
-			
 		});
 	});
+	
+	
 	
 	
 	

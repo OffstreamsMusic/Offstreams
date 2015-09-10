@@ -3,9 +3,11 @@
 	class bandPageModel {
 		
 		private $conn;
+		public $band;
 		
 		public function __construct($conn) {
 			$this->conn = $conn;
+			$this->band;
 		}
 		
 		/*
@@ -24,34 +26,58 @@
 				$gets = $get;
 			}
 			
+			
+			
 			$sql = "SELECT " . $gets . " FROM `bands` WHERE `band_name` = '$name'";
 			$query = $this->conn->query($sql);
 			
-			if ($query->num_rows == 1) {
-				return $query->fetch_assoc();
+			if (@$query->num_rows == 1) {
+				$row = $query->fetch_assoc();
+				return $row;
 			} else {
 				return null;
 			}
 			
 		}
 		
+		
+		private function locationResults() {
+			
+			// values to be inserted into location
+			$location = array("city", "state", "country");
+			foreach ($location as $val) {
+				
+				// If value is empty, skip
+				if ($val == null) {
+					
+					continue;
+					
+				} else {
+					
+					// Set up values for implode
+					$loc[] = $this->band[$val];
+					
+				}
+				
+				// Make it so it's [city, state, country]
+				$this->band['location'] = implode(", ", $loc);
+				
+			}
+		}
+		
+		
 		public function modelResults() {
 			
-			global $name;
-			global $get;
+			global $row;
 			
-			$rows = $this->queryBand($name, $get);
-			
-			$row = array();
-			while ($rows) {
-				foreach($rows as $value) {
-					$row[] = $value;
-				}
+			foreach($row as $key => $value) {
+				$this->band[str_replace("band_", "", $key)] = $value;
 			}
 			
-			return $row;
+			$this->locationResults();
 			
 		}
+		
 	}
 	
 	

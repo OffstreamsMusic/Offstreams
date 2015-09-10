@@ -23,8 +23,51 @@
 			include (BASEPATH . "users/widgets/profileInfo.html");
 			
 			// Load poll widget
-			include (BASEPATH . "polls/process/pollWidget.php");
-			include (BASEPATH . "polls/widgets/pollWidget.html");
+			#include (BASEPATH . "polls/process/pollWidget.php");
+			#include (BASEPATH . "polls/widgets/pollWidget.html");
+			
+		
+			
+			
+			///////////////////////////
+			// INCLUDED PAGES	////
+			///////////////////////////
+			include (BASEPATH . "polls/process/pollModel.php");
+			include (BASEPATH . "polls/widgets/pollView.php");
+			
+			
+			
+			///////////////////////////
+			// CALL CLASSES		 ///
+			///////////////////////////
+			
+			
+			
+			////////////////////////////
+			// MODEL				////
+			////////////////////////////
+			$poll = new PollModel($conn);
+			$pollData = $poll->newPoll();
+			
+			
+			
+			////////////////////////////
+			// VIEWS				////
+			////////////////////////////
+			$polls = new PollView($pollData);
+			
+			
+			
+			////////////////////////////
+			// DEVELOP				 ////
+			////////////////////////////
+			
+				
+			
+			/////////////////////////////
+			// BOOTSTRAP				//
+			/////////////////////////////
+			include (BASEPATH . "polls/bootstrap/pollBootstrap.php");
 			
 			
 			

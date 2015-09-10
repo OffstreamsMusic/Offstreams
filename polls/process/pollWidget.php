@@ -19,21 +19,6 @@
 		
 	} else {
 		
-		$sql = "SELECT * FROM polls
-					RIGHT JOIN
-					pollanswers
-					ON polls.poll_id = pollanswers.poll_id";
-					
-		$query = $conn->query($sql);
-		while ($row = $query->fetch_assoc()){
-			$pollId = $row['poll_id'];
-			$answerId[] = $row['pollAns_id'];
-			$name[] = $row['pollAns_name'];
-		}
-		
-		
-		
-		
 	}
 
 ?>

@@ -43,3 +43,7 @@ RewriteRule ^about/([^/]*)$ offstreams/abouts/index.php?type=$1 [L]
 
 # ADMIN
 RewriteRule ^admin/([^/]*)$ offstreams/admins/index.php?cat=$1 [L]
+
+
+# POLLS
+RewriteRule ^poll/([^/]*)$ offstreams/polls/index.php?poll=$1 [L]

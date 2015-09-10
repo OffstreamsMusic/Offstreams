@@ -384,20 +384,49 @@ $(document).ready(function(){
 	////////////////////////////////////////////
 	
 	
+	////////////////////////////////////////////////////////////////////////////////////////////
+	// Animate Rotate function
+	$.fn.animateRotate = function(angle, duration, easing, complete) {
+	  var args = $.speed(duration, easing, complete);
+	  var step = args.step;
+	  return this.each(function(i, e) {
+		args.complete = $.proxy(args.complete, e);
+		args.step = function(now) {
+		  $.style(e, 'transform', 'rotate(' + now + 'deg)');
+		  if (step) return step.apply(e, arguments);
+		};
+
+		$({deg: angle - 180}).animate({deg: angle}, args);
+	  });
+	};
 	
+	// Click toggles
+	(function($) {
+		$.fn.clickToggle = function(func1, func2) {
+			var funcs = [func1, func2];
+			this.data('toggleclicked', 0);
+			this.click(function() {
+				var data = $(this).data();
+				var tc = data.toggleclicked;
+				$.proxy(funcs[tc], this)();
+				data.toggleclicked = (tc + 1) % 2;
+			});
+			return this;
+		};
+	}(jQuery));
 	
-	$(function() {
-    $("#bandDropInfoButton").click(function() {
-      $(this).addClass("dropInfoButton", 1000, callback);
-    });
- 
-    function callback() {
-      setTimeout(function() {
-        $("#bandDropInfoButton").removeClass("dropInfoButton");
-      }, 1000 );
-    }
-  });
+	// Initiate rotation on click
+	$("#bandDropInfoButton").clickToggle(function() {   
+		$(this).animateRotate(180);
+		$(".bandInfoContainer").slideToggle();
+	},
+	function() {
+		$(this).animateRotate(360);
+		$(".bandInfoContainer").slideToggle();
+	});
 	
+	////////////////////////////////////////////////////////////////////////////////////////////
+
 	
 	
 	
