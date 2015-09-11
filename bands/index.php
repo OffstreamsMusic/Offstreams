@@ -15,6 +15,7 @@
 		include(BASEPATH . "polls/process/pollModel.php");
 		include(BASEPATH . "polls/widgets/pollView.php");
 		include(BASEPATH . "albums/process/albumModel.php");
+		include(BASEPATH . "albums/widgets/albumView.php");
 		
 		
 		
@@ -53,6 +54,7 @@
 		// Store pulled values
 		$row = $model->queryBand($bandZepp, $columns);
 		$pollData = $poll->newPoll();
+		$album->listAlbums();
 		
 		
 		
@@ -61,6 +63,7 @@
 		////////////////////////////
 		$view = new bandPageView($row);
 		$polls = new PollView($pollData);
+		$aView = new AlbumView($album);
 		$side = $polls->setFloat("right");
 		
 		
@@ -91,6 +94,7 @@
 								   "iTunes" =>  array("itunes"),
 								   "Amazon" =>  array("amazon"),
 								   "Merch" =>  array("merchLink"));
+								   
 								   
 		
 		

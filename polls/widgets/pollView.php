@@ -66,10 +66,10 @@
 			switch($side) {
 				
 				case "left":
-					$float = "float: left; clear: left;";
+					$float = "float: left; margin: 0 auto;";
 					break;
 				case "right":
-					$float = "float: right; clear: right;";
+					$float = "float: right; margin: 0 auto;";
 					break;
 				default:
 					$float = null;

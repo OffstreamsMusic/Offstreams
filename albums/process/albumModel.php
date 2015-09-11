@@ -8,7 +8,6 @@
 		public function __construct() {
 			
 			global $conn;
-			
 			$this->conn = $conn;
 			
 		}
@@ -18,8 +17,8 @@
 		// GET BAND ID BASED ON BAND NAME IN PARAMETER
 		private function getBand($band = null) {
 			
-			global $camel;
-			global $zepp;
+			global $camel;	# Must be declared beforehand
+			global $zepp;		# Must be declared beforehand
 			
 			// Parameter empty
 			if ($band == null) {
@@ -56,29 +55,40 @@
 				
 				return $row['band_id'];
 				
+			// More than one or none, return null
 			} else {
 				
 				return null;
 				
 			}
-			
-			
 		}
 		
 		
-		private function getAlbums($id = null) {
+		
+		// GET ALL ALBUMS FOR GIVEN BAND
+		private function getAlbums($id = null, $sort) {
 
 			
 			$sql = "SELECT * FROM `albums`
-					  WHERE `band_id` = '" . $id . "'";
+					  WHERE `band_id` = '" . $id . "'
+					  ORDER BY `album_released` " . $sort;
 					  
 			$query = $this->conn->query($sql);
 			
+			// Declare iteration
+			$i = 0;
 			while ($row = $query->fetch_assoc()){
 				
 				foreach ($row as $key => $val) {
-					$this->album[ltrim($key, "album_")] = $val;
+					
+					// # means iteration of albums
+					// $this->album[#][$key] = $val
+					$this->album[$i][str_replace("album_", "", $key)] = $val;
+					
 				}
+				
+				// Increase the iteration
+				$i++;
 				
 			}
 			
@@ -87,10 +97,11 @@
 		}
 		
 		
-		public function listAlbums() {
+		// LIST ALBUMS TO PAGE
+		public function listAlbums($sort = "DESC") {
 			
 			$bandId = $this->getBand();
-			$this->getAlbums($bandId);
+			$this->getAlbums($bandId, $sort);
 			
 		}
 		

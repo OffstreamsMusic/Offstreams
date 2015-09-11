@@ -7,7 +7,7 @@
 		
 		
 		
-		// Create values from bands
+		// CREATE VALUES FROM BANDS MODEL CLASS
 		public function __construct($values = array()) {
 			global $zepp;
 			global $row;
@@ -15,6 +15,7 @@
 			$this->band = $row;
 			
 			foreach ($values as $key => $val) {
+				
 				// Set zepped values
 				$this->{$key} = $zepp->zeppCode("zepp", "symbol", $val);
 			}
@@ -22,6 +23,7 @@
 		
 		
 		
+		// DETERMINE IF BAND IMAGE IS A HEADER IMAGE OR THE BAND IMAGE ITSELF
 		public function bandImageSrc($type, $source) {
 			
 			switch($type) {
@@ -50,6 +52,7 @@
 		
 		
 		
+		// CHECK IF MERCHANDISE EXISTS
 		private function merchAvailable($link) {
 			
 			global $model;
@@ -64,7 +67,8 @@
 						  ";
 				
 				$model->band[$link] = $button;
-				
+			
+			// Link does not have value
 			} else {
 				
 				// Band has no merch for sale
@@ -87,6 +91,7 @@
 		}
 		
 		
+		
 		// DECLARE MERCH BUTTONS
 		public function merchButtons() {
 			
@@ -98,12 +103,10 @@
 			// Create link button
 			foreach ($array as $link) {
 				
+				// Create link button if that button has value (through the "merchAvailable()" method)
 				echo $this->merchAvailable($link);
 				
 			}
-			
-			#return $model->band;
-			
 		}
 		
 		

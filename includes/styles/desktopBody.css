@@ -519,6 +519,69 @@ i, em {
 }
 
 
+.albumImage {
+	width: 200px;
+	height: 200px;
+}
+
+.albumInfoBar {
+	height: 35px;
+	padding: 5px;
+	padding-left: 10px;
+	color: #eee;
+	background: #333;
+	width: 100%;
+}
+
+.albumInfoBar > span {
+	display: inline-block;
+}
+
+.albumInfoBar > span > * {
+	margin: 0 auto;
+}
+
+.bandPageLeft {
+	width: 70%;
+	float: left;
+}
+
+.bandPageRight {
+	width: 30%;
+	float: right;
+	
+}
+
+.albumInfoLeftCol {
+	width: 200px;
+	float: left;
+}
+
+.albumInfoRightCol {
+	width: calc(100% - 200px);
+	float: right;
+	height: 100%;
+}
+
+.albumInfoRightCol > p{
+	margin: 0 auto;
+	padding: 5px;
+	padding-left: 10px;
+	width: 100%;
+}
+
+.albumInfoRightCol > p:nth-child(odd) {
+	background: #888;
+	color: #f1f1f1;
+}
+
+.albumInfoRightCol > p:nth-last-child(1) {
+	height: calc(130px);
+}
+
+.bandAlbumSeperator {
+	clear: both;
+}
 
 /***********************/
 /*			4.) POLL WIDGET	  	*/
